@@ -1,0 +1,10 @@
+logs/*
+!.gitkeep
+node_modules/
+bower_components/
+tmp
+.DS_Store
+.idea
+dev/scripts/app.js
+dev/scripts/angular-extentions.js
+dist/
