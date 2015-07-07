@@ -7,4 +7,5 @@ tmp
 .idea
 dev/scripts/app.js
 dev/scripts/angular-extentions.js
+dev/resources/styles/app.css
 dist/
