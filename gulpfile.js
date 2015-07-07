@@ -70,13 +70,13 @@ gulp.task('createAngularExtentions', function() {
 });
 
 //Dist
-gulp.task('minify-js', function() {
+gulp.task('minify-js', ['createAppJS'], function() {
   return gulp.src(['./dev/scripts/app.js', './dev/scripts/angular-extentions.js'])
     .pipe(uglify())
     .pipe(gulp.dest('dist/scripts/'));
 });
 
-gulp.task('minify-css', function() {
+gulp.task('minify-css', ['sass'], function() {
   return gulp.src('./dev/resources/styles/*.css')
     .pipe(minifyCSS({compatibility: 'ie8'}))
     .pipe(gulp.dest('dist/resources/styles/'));
@@ -126,5 +126,6 @@ gulp.task('copy-data', function() {
 });
 
 gulp.task('default', ['connectDev', 'sass', 'watchDev', 'createAppJS', 'createAngularExtentions']);
-gulp.task('dist', ['connectDist', 'copy-data', 'minify-js', 'minify-css', 'minify-html', 'CDN', 'copy-angularjs']);
-gulp.task('dist-noserve', ['copy-data', 'minify-js', 'minify-css', 'minify-html', 'CDN', 'copy-angularjs']);
+gulp.task('dist', ['connectDist', 'copy-data', 'sass', 'createAppJS', 'minify-js', 'minify-css', 'minify-html', 'CDN', 'copy-angularjs']);
+//For CI
+gulp.task('build', ['copy-data', 'sass', 'createAppJS', 'minify-js', 'minify-css', 'minify-html', 'CDN', 'copy-angularjs']);

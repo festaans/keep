@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "test": "./node_modules/karma/bin/karma start --single-run --browsers PhantomJS",
-    "postinstall": "bower install && gulp dist-noserve"
+    "postinstall": "bower install && gulp build"
   },
   "dependencies": {
     "bower": "^1.4.1",
