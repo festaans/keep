@@ -1,9 +1,11 @@
 ##UI Challenge #2 - Keep
+Master branch status [![Build Status](https://travis-ci.org/festaans/keep.svg?branch=master)](https://travis-ci.org/festaans/keep)
+
 ![Keep UI Reference](https://raw.github.com/festaans/keep/master/screenshot.png)
 #### Round 1
 Create a separate view and link to it from the overview (root) view and implement the design above using the data provided.
 
-- Using the git workflow create a branch per feature and open a pull request once that feature is complete - upon succesfull review (+1) you can merge the feature branch into master.
+- Using the git workflow create a branch per feature and open a pull request once that feature is complete - upon successful review (+1) you can merge the feature branch into master.
 
 Your score will be the total of the following:
 
@@ -15,5 +17,7 @@ Your score will be the total of the following:
 - plus 10 for effectively using FlexBox
 - plus 1 for every merged pull request
 - minus the div-percentage between your implementation and the screenshot above (test will be run @1150x800)
-___
-####...
+
+---
+
+#### Round ?
