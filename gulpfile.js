@@ -7,6 +7,11 @@ var minifyHTML = require('gulp-minify-html');
 var minifyCSS = require('gulp-minify-css');
 var cdnizer = require("gulp-cdnizer");
 var sass = require('gulp-sass');
+var bower = require('gulp-bower');
+//Bower
+gulp.task('bower', function() {
+  return bower()
+});
 //Servers
 gulp.task('connectDev', function () {
   connect.server({
@@ -24,11 +29,16 @@ gulp.task('connectDist', function () {
 });
 //sass
 //sass
-gulp.task('sass', function () {
+gulp.task('sass', ['bower'], function () {
   gulp.src('./dev/resources/sass/app.scss')
   .pipe(sass())
   .pipe(gulp.dest('./dev/resources/styles/'))
   .pipe(connect.reload());
+});
+gulp.task('BuildCSS', ['bower'], function () {
+  gulp.src('./dev/resources/sass/app.scss')
+  .pipe(sass())
+  .pipe(gulp.dest('./dist/resources/styles/'));
 });
 //watchDev
 gulp.task('watchDev', function () {
@@ -60,7 +70,7 @@ gulp.task('createAppJS', function() {
   .pipe(gulp.dest('./dev/scripts/'))
   .pipe(connect.reload());
 });
-gulp.task('createAngularExtentions', function() {
+gulp.task('createAngularExtentions', ['bower'], function() {
   gulp.src([
     './dev/bower_components/angular-ui-router/release/angular-ui-router.js'
   ])
@@ -69,17 +79,26 @@ gulp.task('createAngularExtentions', function() {
   .pipe(connect.reload());
 });
 
+gulp.task('BuildAE', ['bower'], function() {
+  gulp.src([
+    './dev/bower_components/angular-ui-router/release/angular-ui-router.js'
+  ])
+  .pipe(concat('angular-extentions.js'))
+  .pipe(gulp.dest('./dist/scripts/'))
+  .pipe(connect.reload());
+});
+
 //Dist
-gulp.task('minify-js', ['createAppJS'], function() {
+gulp.task('minify-js', ['createAppJS', 'createAngularExtentions', 'CDN'], function() {
   return gulp.src(['./dev/scripts/app.js', './dev/scripts/angular-extentions.js'])
     .pipe(uglify())
-    .pipe(gulp.dest('dist/scripts/'));
+    .pipe(gulp.dest('./dist/scripts/'));
 });
 
 gulp.task('minify-css', ['sass'], function() {
   return gulp.src('./dev/resources/styles/*.css')
     .pipe(minifyCSS({compatibility: 'ie8'}))
-    .pipe(gulp.dest('dist/resources/styles/'));
+    .pipe(gulp.dest('./dist/resources/styles/'));
 });
 
 gulp.task('minify-html', function() {
@@ -92,7 +111,7 @@ gulp.task('minify-html', function() {
     .pipe(minifyHTML(opts))
     .pipe(gulp.dest('./dist/'));
 });
-gulp.task('CDN' , ['minify-html'], function() {
+gulp.task('CDN' , ['minify-html', 'bower'], function() {
   gulp.src("./dist/index.html")
         .pipe(cdnizer({
             allowRev: true,
@@ -126,6 +145,6 @@ gulp.task('copy-data', function() {
 });
 
 gulp.task('default', ['connectDev', 'sass', 'watchDev', 'createAppJS', 'createAngularExtentions']);
-gulp.task('dist', ['connectDist', 'copy-data', 'sass', 'createAppJS', 'minify-js', 'minify-css', 'minify-html', 'CDN', 'copy-angularjs']);
+gulp.task('dist', ['connectDist', 'copy-data', 'minify-js', 'minify-css', 'minify-html', 'CDN', 'copy-angularjs']);
 //For CI
-gulp.task('build', ['copy-data', 'sass', 'createAppJS', 'minify-js', 'minify-css', 'minify-html', 'CDN', 'copy-angularjs']);
+gulp.task('build', ['copy-data', 'BuildCSS', 'BuildAE', 'minify-js', 'minify-css', 'minify-html', 'CDN', 'copy-angularjs']);
