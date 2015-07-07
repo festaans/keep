@@ -10,9 +10,7 @@
   "dependencies": {
     "bower": "^1.4.1",
     "express": "^4.13.0",
-    "gulp": "^3.9.0"
-  },
-  "devDependencies": {
+    "gulp": "^3.9.0",
     "gulp-cdnizer": "^1.1.6",
     "gulp-concat": "^2.6.0",
     "gulp-connect": "^2.2.0",
@@ -20,6 +18,7 @@
     "gulp-minify-html": "^1.0.3",
     "gulp-sass": "^2.0.3",
     "gulp-uglify": "^1.2.0",
+  "devDependencies": {
     "jasmine-core": "^2.3.4",
     "karma": "^0.12.36",
     "karma-chrome-launcher": "^0.1.12",
