@@ -1,0 +1,14 @@
+language: node_js
+node_js:
+- '0.10'
+before_script:
+- npm install -g bower
+- bower install
+deploy:
+  provider: heroku
+  api_key:
+    secure: d7JFkKaJFAC5CbOQM1PXstJki89DhQkoj4+IczEIARzSv14sDb2EkhgTc0uaA1GFU9A1Oewp4cH6mqb3d3S7kdtG/58M11PUUiGL9MyRwjbkhoO3Fb9YgCu279iJp1ARq66PFldtILaFwhLgg0CcFfPLTxqxqLb13yehg+iiwSnp1A1vGadvG8nxT4LwfXp0LUaBf9I5VwgdVsdE/g7fq46mv+E3dpLiMa8Xm/dnbaEROyRkYkXcztZ6mASYzr7zvysSyl80+lI7b+/UwYgCEpT741w5weMhYPjm7Qayo/aXLEHb8Cqyb9ZnzetymxWdbezeJv1tB/Oi5c2f5NZXdtr0SOEwcI7gDKTBs1uKgPDGM8adnRnu7p779FOSnw+6e9ODRVhJJnUe6Ij84/37aMNbqWsPWjp+wXbTa25ffbf74aNgk99BdqJ/e0k8M3acBO9wjt8Kt8OGbLhfLweZMBY6kOqLGMHwsYdFp+ptgh2kQJFu11IZoIWVzvtL1JUxmpSCRLXY4x34MGXx57SC7H9W+7XGnoD4iNJf2n3Ssiy9VochjOzlwx25UuZ/ruA1NXCUy7VbjvZjVtHxuIaqGu+SupGdiJs8tiZJh7M4UWzs/HPNhrhr9TXoYMDxd3JRnnRKn0wODwapXp7UhP9dIP7yN069QZdygYicWNFqjXY=
+  app: keep-n-file
+  on:
+    repo: festaans/keep
+    branch: master
