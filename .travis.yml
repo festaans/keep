@@ -4,6 +4,7 @@ node_js:
 before_script:
 - npm install -g bower
 - bower install
+- gulp build
 deploy:
   provider: heroku
   api_key:
