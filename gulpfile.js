@@ -70,13 +70,13 @@ gulp.task('createAngularExtentions', function() {
 });
 
 //Dist
-gulp.task('minify-js', function() {
+gulp.task('minify-js', ['createAppJS'], function() {
   return gulp.src(['./dev/scripts/app.js', './dev/scripts/angular-extentions.js'])
     .pipe(uglify())
     .pipe(gulp.dest('dist/scripts/'));
 });
 
-gulp.task('minify-css', function() {
+gulp.task('minify-css', ['sass'], function() {
   return gulp.src('./dev/resources/styles/*.css')
     .pipe(minifyCSS({compatibility: 'ie8'}))
     .pipe(gulp.dest('dist/resources/styles/'));
@@ -111,11 +111,21 @@ gulp.task('CDN' , ['minify-html'], function() {
 gulp.task('copy-angularjs', function() {
   var filesToMove = [
   './dev/bower_components/angular/angular.min.js',
-  './dev/bower_components/angular/angular.min.js.map'
+  './dev/bower_components/angular/angular.min.js.map',
+  './dev/bower_components/angular-mocks/angular-mocks.js'
   ];
-  gulp.src(filesToMove, { base: './dev/bower_components/angular/' })
-  .pipe(gulp.dest('./dist/bower_components/angular/'));
+  gulp.src(filesToMove, { base: './dev/bower_components/' })
+  .pipe(gulp.dest('./dist/bower_components/'));
+});
+gulp.task('copy-data', function() {
+  var filesToMove = [
+  './dev/data/**/*.json'
+  ];
+  gulp.src(filesToMove, { base: './dev/data/' })
+  .pipe(gulp.dest('./dist/data/'));
 });
 
 gulp.task('default', ['connectDev', 'sass', 'watchDev', 'createAppJS', 'createAngularExtentions']);
-gulp.task('dist', ['connectDist', 'minify-js', 'minify-css', 'minify-html', 'CDN', 'copy-angularjs']);
+gulp.task('dist', ['connectDist', 'copy-data', 'sass', 'createAppJS', 'minify-js', 'minify-css', 'minify-html', 'CDN', 'copy-angularjs']);
+//For CI
+gulp.task('build', ['copy-data', 'sass', 'createAppJS', 'minify-js', 'minify-css', 'minify-html', 'CDN', 'copy-angularjs']);
