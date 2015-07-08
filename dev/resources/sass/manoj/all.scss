@@ -107,7 +107,7 @@ $overviewHeight: 118px;
     flex-direction: row;
     flex-wrap: wrap;
     .image-items {
-      margin: 5px;
+      margin: 10px;
       flex: 1;
       min-width: 17%;
     }
@@ -147,8 +147,17 @@ $overviewHeight: 118px;
   padding-right: 20px;
 }
 @media screen and (max-width:600px) {
-  .images {
-    flex-direction: column;
-    flex-wrap: nowrap;
+  .content-panel {
+    .images {
+      display:flex;
+      flex-direction: column;
+      flex-wrap: nowrap;
+      .image-items {
+        flex: 1;
+      }
+      :hover {
+          background-color: $lightGrey;
+      }
+    }
   }
 }
