@@ -1,63 +1,75 @@
-<div class="top" layout="row" >
-  <h2>Keep</h2>
+<div class="keitu">
+  <div class="top">
+    <h2>Keep</h2>
 
-  <div class="toolbar">
-    <span><i class="fa fa-search"></i></span>
-    <span><i class="fa fa-globe"></i></span>
+    <div class="toolbar">
+  <!--    <input type="text" class="search"> -->
+      <span><i class="fa fa-search"></i></span>
+      <span><i class="fa fa-globe"></i></span>
 
-
-  </div>
-</div>
-
-<div class="bottom" layout="row" >
-  <div class="side">
-
-    <div class="upload-box">
-      <span><i class="fa fa-upload"></i></span>
-
-    </div>
-
-    <div class="menu">
-
-      <div class="menu-item category">Main</div>
-      <div class="menu-item active"><span><i class="fa fa-clock-o">Overview</i></span></div>
-      <div class="menu-item"><span><i class="fa fa-dot-circle-o">         Activity</i></span></div>
-      <div class="menu-item"><span><i class="fa fa-heart-o">Dearest</i></span></div>
-      <div class="menu-item"><span><i class="fa fa-folder-open-o">Folders</i></span></div>
-       <br></br>
-
-       <div class="menu-item category">Filter</div>
-       <div class="menu-item"><span><i class="fa fa-picture-o">Image</i></span></div>
-       <div class="menu-item"><span><i class="fa fa-volume-up">Audio</i></span></div>
-       <div class="menu-item"><span><i class="fa fa-video-camera">Video</i></span></div>
-       <div class="menu-item"><span><i class="fa fa-file-text-o">Notes</i></span></div>
-       <div class="menu-item"><span><i class="fa fa-link">Links</i></span></div>
-       <div class="menu-item"><span><i class="fa fa-files-o">Files</i></span></div>
 
 
     </div>
-
   </div>
 
-  <div class="content" layout="row">
-    <p>Overview</p>
+  <div class="bottom">
+    <div class="side">
 
-    <div class="heading">
-      <span><i class="fa fa-plus-circle"> </i></span>
-      <span><i class="fa fa-print"></i> </span>
-      <span><i class="fa fa-lock"></i> </span>
-      <span><i class="fa fa-gift"></i></span>
-      <div class="text"><span>2 selected items </span></div>
+      <div class="upload-box">
+        <span><i class="fa fa-upload"></i></span>
+
+      </div>
+
+      <div class="menu">
+
+        <div class="menu-item category">Main</div>
+        <div class="menu-item active"><span><i class="fa fa-clock-o">Overview</i></span></div>
+        <div class="menu-item"><span><i class="fa fa-dot-circle-o"> Activity</i></span></div>
+        <div class="menu-item"><span><i class="fa fa-heart-o">Dearest</i></span></div>
+        <div class="menu-item"><span><i class="fa fa-folder-open-o">Folders</i></span></div>
+         <br></br>
+
+         <div class="menu-item category">Filter</div>
+         <div class="menu-item"><span><i class="fa fa-picture-o">Image</i></span></div>
+         <div class="menu-item"><span><i class="fa fa-volume-up">Audio</i></span></div>
+         <div class="menu-item"><span><i class="fa fa-video-camera">Video</i></span></div>
+         <div class="menu-item"><span><i class="fa fa-file-text-o">Notes</i></span></div>
+         <div class="menu-item"><span><i class="fa fa-link">Links</i></span></div>
+         <div class="menu-item"><span><i class="fa fa-files-o">Files</i></span></div>
+
+
+      </div>
 
     </div>
 
-    <div class="headingRight">
-       Name     
+    <div class="content-container">
 
-    </div>
+        <div class="overview"><h1>Overview</h1></div>
+        <div class="headingIcons ">
+          <span><i class="fa fa-plus-circle"> </i></span>
+          <span><i class="fa fa-print"></i> </span>
+          <span><i class="fa fa-lock"></i> </span>
+          <span><i class="fa fa-gift"></i></span>
+          <div class="text"><span>{{selectedItemsCount}} selected items </span></div>
+        </div>
+        <div class="headingRight">
+          <ul class="sort">
+           <li>Name</li>
+           <li>Size</li>
+           <li>Views</li>
+           <li class="uploaded">Uploaded</li>
+          </ul>
+        </div>
+        <div class="myLine"></div>
+        <div class="items">
+          <div class="item" ng-repeat="item in items" ng-click="selectItem($index)">
 
+            <img ng-src="{{item.thumbnail}}"/>
+            <div>{{item.fileName}}</div>
+            <div>{{item.uploaded}}</div>
 
+          </div>
+        </div>
+    </div> <!-- end of content-container -->
   </div>
-
-
 </div>
