@@ -20,6 +20,7 @@ $overviewHeight: 118px;
   width: 100%;
   line-height: 60px;
   font-size: 20px;
+  z-index:999;
   span {
     padding-left: 20px;
   }
@@ -113,6 +114,7 @@ $overviewHeight: 118px;
     }
     :hover {
         background-color: $lightGrey;
+        box-shadow: 0 0 10px $lightGreen;
     }
   }
 }
