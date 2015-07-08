@@ -1,32 +1,57 @@
+$lightGreen: #37B298;
+$white: #000000;
+$grey: #232B2D;
+
+
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,300,400,700);
+
+
+
 .yauvanView {
-  background: #232B2D;
+  background: $grey;
   height: 100%;
 }
 
 
 
-
+//sidebar style
 
 .sideBar {
   width:200px;
-  height:100%;
-  position: absolute;
-  background-color: #fff;
+  min-height:100%;
+  position: fixed;
+  background-color: $grey;
+  margin-top: 60px;
 
+      .topBox { //uploadbox
+        background-color: $lightGreen;
+        padding: 20px;
+              .dashed-border {
+                border: 3px dashed #fff;
+                padding: 15px;
+                span {
+                  color: $white;
+                  padding-left: 55px;
+                }
+              }
+        } // end upload box
 
-  .topBox {
-    width:200px;
-    height:100px;
-    position: absolute;
-    background-color: #FABF0C;
+        .sideBarMenu {
+          color: #6F7B7E;
+          font-size: 20px;
+          padding: 20px;
+        }
+
   }
 
-}
+//end sidebar styles
 
 
 .content {
-  width: 800px;
+  width: 100%;
   height: 100%;
+  background-color: #fff;
+  padding-top: 60px;
 
 }
 
@@ -38,5 +63,44 @@
   height: 60px;
   padding: 0;
   margin: 0;
-  background-color: #000;
+  position: fixed;
+  z-index: 999;
+  background-color: $white;
+
+        .keepFont {
+          font-family: 'Open Sans', sans-serif;
+          color: #fff;
+          font-size: 20px;
+          font-style: bold;
+          font-weight: 600;
+
+          display: inline-block;
+          margin-left: 32px;
+          line-height: 60px;
+
+        }
+        .rightAlign {
+          color: #fff;
+          position: absolute;
+          right: 0px;
+          width: 300px;
+          line-height: 60px;
+        }
+
+
+
+
 }
+
+/*
+.view-container::after {
+  content: "";
+  background-image: url(../images/ref.png);
+  position: absolute;
+  z-index: 9999;
+  width: 1150px;
+  height: 800px;
+  top: 0;
+  left: 0;
+  opacity: 0.2;
+}  */
