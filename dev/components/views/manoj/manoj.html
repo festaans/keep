@@ -1,1 +1,42 @@
-test
+<div class="top-bar">
+  <span class="pull-left">Keep</span>
+  <span class="pull-right search"><input class="rounded" type="search" class="form-control" placeholder="Search"></span>
+</div>
+<div class="side-panel">
+  <div class="upload">
+    <div class="dashed-border">
+      <span><i class="fa fa-upload"></i></span>
+    </div>
+  </div>
+  <div class="main">
+    MAIN
+    <div class="main-item active"><i class="icon ion-ios-speedometer-outline"></i><span>Overview</span></div>
+    <div class="main-item"><i class="icon ion-ios-speedometer-outline"></i><span>Activity</span></div>
+    <div class="main-item"><i class="fa fa-heart-o"></i><span>Dearest</span></div>
+    <div class="main-item"><i class="fa fa-folder-o"></i><span>Folders</span></div>
+  </div>
+  <div class="filter">
+    FILTER
+    <div class="filter-item"><i class="fa fa-picture-o"></i><span>Images</span></div>
+    <div class="filter-item"><i class="fa fa-volume-up"></i>
+      <span class="audioMargin">Audio</span>
+      <span>8</span>
+    </div>
+    <div class="filter-item"><i class="fa fa-video-camera"></i><span>Video</span></div>
+    <div class="filter-item"><i class="fa fa-file-text-o"></i><span>Notes</span></div>
+    <div class="filter-item"><i class="fa fa-link"></i><span>Links</span></div>
+    <div class="filter-item"><i class="fa fa-file-o"></i><span>Files</span></div>
+  </div>
+</div>
+<div class="content-panel">
+  <div class="overview">
+    Overview
+  </div>
+  <div class="images">
+    <div class="image-items" ng-repeat="item in items">
+      <img ng-src="{{item.thumbnail}}" title="{{item.fileName}}" width="100%;"/>
+      <p class="file">{{item.fileName}}</p>
+      <p class="uploaded">{{item.uploaded}}</p>
+    </div>
+  </div>
+</div>

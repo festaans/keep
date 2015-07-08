@@ -1,0 +1,118 @@
+//colors
+$darkGrey: #1E2327;
+$midGrey: #393D40;
+$lightGrey: #F0EFEF;
+$lightGreen: #37B298;
+$menuItemTextColor: #1B2224;
+
+$activeTextColor: #fff;
+$textColor: #fff;
+
+$sidePanelWidth: 200px;
+$topBarHeight: 60px;
+$overviewHeight: 118px;
+
+.top-bar {
+  background-color: $darkGrey;
+  color: $textColor;
+  height: $topBarHeight;
+  width: 100%;
+  line-height: 60px;
+  font-size: 20px;
+  span {
+    padding-left: 20px;
+  }
+  .search {
+    margin-right: 50px;
+    height: 25px;
+  }
+  .rounded {
+    border-radius: 20px;
+  }
+}
+.side-panel {
+  position: fixed;
+  background-color: $midGrey;
+  width: $sidePanelWidth;
+  min-height: 100%;
+  .upload {
+    background-color: $lightGreen;
+    padding: 20px;
+    .dashed-border {
+      border: 2px dashed #fff;
+      padding: 15px;
+      span {
+        color: $textColor;
+        padding-left: 55px;
+      }
+    }
+  }
+  .main {
+    padding: 20px;
+    .main-item {
+      color: $menuItemTextColor;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      &.active {
+        color: $activeTextColor;
+        position: relative;
+      }
+      i {
+        margin-right: 10px;
+      }
+    }
+  }
+  .filter {
+    padding: 20px;
+    .filter-item {
+      color: $menuItemTextColor;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      i {
+        margin-right: 10px;
+      }
+    }
+  }
+}
+.content-panel {
+  margin-left: $sidePanelWidth;
+  //background-color: $lightGrey;
+  .overview {
+    height: $overviewHeight;
+    //border: 2px solid red;
+    padding: 20px;
+  }
+  .images {
+    //border: 2px solid green;
+    padding: 20px;
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    .image-items {
+      background-color: #fff;
+      margin: 5px;
+      flex: 20;
+      min-width: 15%;
+    }
+  }
+}
+.file {
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+.uploaded {
+  margin-bottom: 2px;
+}
+.audioMargin {
+  margin-right: 60px;
+}
+@media (min-width: 768px) and (min-width: 320px) {
+  .content-panel {
+    .images {
+      .image-items {
+        display:flex;
+        flex-direction: column;
+      }
+    }
+  }
+}
