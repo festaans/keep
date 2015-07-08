@@ -27,11 +27,31 @@
     <div class="filter-item"><i class="fa fa-link"></i><span>Links</span></div>
     <div class="filter-item"><i class="fa fa-file-o"></i><span>Files</span></div>
   </div>
+  <div class="progressbar">
+    <p>50 GB / 100 GB</p>
+    <p>progress-bar</p>
+  </div>
 </div>
 <div class="content-panel">
   <div class="overview">
-    Overview
+    <div class="overview-heading">Overview</div>
+    <div>
+      <div class="pull-left">
+        <i class="fa fa-plus-circle right-margin"></i>
+        <i class="fa fa-folder-o right-margin"></i>
+        <i class="fa fa-lock right-margin"></i>
+        <i class="fa fa-trash-o right-margin"></i>
+        <p class="selected-items"> 2 Selected items </p>
+      </div>
+      <div class="pull-right">
+        <p class="overview-right">Name</p>
+        <p class="overview-right">Size</p>
+        <p class="overview-right">Views</p>
+        <p class="overview-right">Uploaded</p>
+      </div>
+    </div>
   </div>
+  <div class="hrLine"><hr /></div>
   <div class="images">
     <div class="image-items" ng-repeat="item in items">
       <img ng-src="{{item.thumbnail}}" title="{{item.fileName}}" width="100%;"/>
