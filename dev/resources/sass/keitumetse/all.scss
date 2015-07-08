@@ -16,6 +16,7 @@ $blue: #20B2AA;
   font-family : Open Sans;
   font-size : 15px;
 //  right: 100px;
+  margin-right : fixed;
 
 .toolbar{
   //margin-right: 2px;
@@ -35,6 +36,15 @@ $blue: #20B2AA;
     height: 17px;
   //  line-height: 50px;
     text-transform: uppercase;
+
+    .search{
+//      margin-right: 100px;
+    //   line-height :50px;
+///    padding-right: 150px;
+    }
+
+
+
 
 }
 
@@ -109,20 +119,52 @@ $blue: #20B2AA;
      margin-left : 200px;
      padding: 10px;
 
-     .heading{
+     .overview{
+       font-weight : bold;
+       margin-top: 1px;
+       top : 10px;
+     }
+
+     .headingIcons{
        color: $gray;
+       display :inline-block;
+       margin-top: 20px;
+
 
        .text{
          color: $midGray;
-
-
+         display : inline-block;
          //margin-left : 250px;
        }
      }
 
-     .headingRight{
+       .headingRight{
+         padding: 20px;
+         display: inline-block;
+         right: 20px;
+         margin-right : 15px;
+         position: absolute;
+      //   width: 50px;
 
-       //  background-color: $midGray;
+      .sort{
+        margin :0;
+        padding:0;
+        list-style : none;
+        display :block;
+        float: right;
+
+
+        li{
+          display : inline-block;
+
+        }
+      }
+
+     }
+
+//     .headingRight{
+
+       /*  background-color: $midGray;
            height: (50px - 40px);
            width: 50px;
            top:10px;
@@ -130,9 +172,13 @@ $blue: #20B2AA;
            position: absolute;
            padding: 20px; // 60px 20px 20px;
            height: 17px;
-           line-height: 200px;
-           text-transform: uppercase;
+           line-height: 10px;
+          // text-transform: uppercase;
 
-     }
+           margin-top: 100px;
+           display: inline;
+           */
+
+//     }
 
 }
