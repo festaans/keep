@@ -1,3 +1,83 @@
+.top-bar {
+  background-color: #1E2327;
+  color: #fff;
+  height: 60px;
+  width: 100%;
+  line-height: 60px;
+  font-size: 20px; }
+  .top-bar span {
+    padding-left: 20px; }
+  .top-bar .search {
+    margin-right: 50px;
+    height: 25px; }
+  .top-bar .rounded {
+    border-radius: 20px; }
+
+.side-panel {
+  position: fixed;
+  background-color: #393D40;
+  width: 200px;
+  min-height: 100%; }
+  .side-panel .upload {
+    background-color: #37B298;
+    padding: 20px; }
+    .side-panel .upload .dashed-border {
+      border: 2px dashed #fff;
+      padding: 15px; }
+      .side-panel .upload .dashed-border span {
+        color: #fff;
+        padding-left: 55px; }
+  .side-panel .main {
+    padding: 20px; }
+    .side-panel .main .main-item {
+      color: #1B2224;
+      padding-top: 10px;
+      padding-bottom: 10px; }
+      .side-panel .main .main-item.active {
+        color: #fff;
+        position: relative; }
+      .side-panel .main .main-item i {
+        margin-right: 10px; }
+  .side-panel .filter {
+    padding: 20px; }
+    .side-panel .filter .filter-item {
+      color: #1B2224;
+      padding-top: 10px;
+      padding-bottom: 10px; }
+      .side-panel .filter .filter-item i {
+        margin-right: 10px; }
+
+.content-panel {
+  margin-left: 200px; }
+  .content-panel .overview {
+    height: 118px;
+    padding: 20px; }
+  .content-panel .images {
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; }
+    .content-panel .images .image-items {
+      background-color: #fff;
+      margin: 5px;
+      flex: 20;
+      min-width: 15%; }
+
+.file {
+  margin-top: 2px;
+  margin-bottom: 2px; }
+
+.uploaded {
+  margin-bottom: 2px; }
+
+.audioMargin {
+  margin-right: 60px; }
+
+@media (min-width: 768px) and (min-width: 320px) {
+  .content-panel .images .image-items {
+    display: flex;
+    flex-direction: column; } }
+
 html, body, .view-container {
   font-family: sans-serif;
   width: 100%;
