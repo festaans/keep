@@ -32,6 +32,44 @@ $topbarheight: "60px";
         //   line-height :50px;
     ///    padding-right: 150px;
         }
+
+                span.search {
+          position: relative;
+          input{
+            min-width: 100px;
+            height: 20px;
+            padding-right: 150px;
+          //  padding: 5px 35px 5px 12px;
+            border-radius: 15px;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            border: none;
+            -webkit-transition: all 0.3s ease-in-out;
+            -moz-transition: all 0.3s ease-in-out;
+            -o-transition: all 0.3s ease-in-out;
+            transition: all 0.3s ease-in-out;
+            &:focus {
+              min-width: 150px;
+            }
+          }
+          button {
+            width: 5px;
+            height: 10px;
+            position: absolute;
+            right: 15px;
+            border: none;
+            background: transparent;
+            i {
+              color: #999;
+              font-size: 15px;
+              line-height: 10px;
+            }
+          }
+          :focus {
+              outline-color: transparent;
+              outline-style: none;
+          }
+        }
     }
 
   }
@@ -77,6 +115,10 @@ $topbarheight: "60px";
             margin : 5px;
           }
         }
+      }
+      .memorySize{
+        font-size: 12px;
+        color: white;
       }
     } /*end of side*/
     .content-container {
@@ -142,6 +184,10 @@ $topbarheight: "60px";
        } /*content*/
     } /*bottom*/
 
+    @mixin display-type($display){
+      display : $display;
+    }
+
 
         /* iPads (portrait and landscape) ----------- */
     @media only screen and (max-device-width : 1024px) {
@@ -163,9 +209,10 @@ $topbarheight: "60px";
            .items{
              .item{
                .filename{
+                 @include display-type(flex);
                  font-size : 2em;
-                 display : flex;
-                 direction : column;
+              //   display : flex;
+                 direction : row;
                }
              }
            }
