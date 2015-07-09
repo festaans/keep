@@ -1,11 +1,11 @@
 <div class="view yauvanView">
 
   <div class="topToolBar">
-      <a class="keepFont">keep<a>
+      <a class="keepFont">keep</a>
 
               <a class="rightAlign">
 
-                <input placeholder="Search"> </input><i class="fa fa-search"></i>
+                <input placeholder="Search"> </input><i class="fa fa-search"></i><img style="padding-left:20px;" src="{{user.avatar}}" height="17px" width="35px">
 
               </a>
 
@@ -21,49 +21,72 @@
 
       <div id="mainMenu" class="sideBarMenu">
           <p>MAIN</p>
-          <i class="fa fa-check-circle-o">&nbsp;&nbsp;Overview</i>
+          <i class="fa fa-circle-o">&nbsp;&nbsp;Overview</i>
           </br>
-          <i class="fa fa-check-circle-o">&nbsp;&nbsp;Activity</i>
+        </br>
+          <i class="icon ion-ios-speedometer-outline">&nbsp;&nbsp;Activity</i>
           </br>
-          <i class="fa fa-check-circle-o">&nbsp;&nbsp;Dearest</i>
+        </br>
+          <i class="fa fa-heart-o">&nbsp;&nbsp;Dearest</i>
           </br>
-          <i class="fa fa-check-circle-o">&nbsp;&nbsp;Folders</i>
+        </br>
+          <i class="fa fa-folder-o">&nbsp;&nbsp;Folders</i>
           </br>
 
       </div>
 
       <div id="filterMenu" class="sideBarMenu">
           <p>FILTER</p>
-          <i class="fa fa-check-circle-o">&nbsp;&nbsp;Images</i>
+          <i class="fa fa-picture-o">&nbsp;&nbsp;Images</i>
         </br>
-          <i class="fa fa-check-circle-o">&nbsp;&nbsp;Audio</i>
+      </br>
+          <i class="fa fa-volume-up">&nbsp;&nbsp;Audio</i><a style="padding-left: 65px;">8</a>
         </br>
-          <i class="fa fa-check-circle-o">&nbsp;&nbsp;Video</i>
+      </br>
+          <i class="fa fa-video-camera">&nbsp;&nbsp;Video</i>
         </br>
-          <i class="fa fa-check-circle-o">&nbsp;&nbsp;Notes</i>
+      </br>
+          <i class="fa fa-file-text-o">&nbsp;&nbsp;Notes</i>
         </br>
-          <i class="fa fa-check-circle-o">&nbsp;&nbsp;Links</i>
+      </br>
+          <i class="fa fa-link">&nbsp;&nbsp;Links</i>
         </br>
-          <i class="fa fa-check-circle-o">&nbsp;&nbsp;Files</i>
+      </br>
+          <i class="fa fa-file-o">&nbsp;&nbsp;Files</i>
         </br>
 
       </div>
+
+      <br/>
+      <br/>
+      <a class="limitValue">50 GB/ 100 GB</a>
+      <progress class="progressBar" max="100" value="80">Test</progress>
 
   </div>
 
   <div class="content" id="content">
 
         <div class="contentToolBar" id="contentBar" >
-
-          <div id="leftBar" class="leftAlign">
+          <div id="Sort" >
+          <div id="leftBar" class="pull-left">
               <h1 style="padding-left: 20px; color: #6F7B7E;">Overview</h1>
-              <i class="fa fa-check-circle-o" style="padding-left: 20px;"></i><i class="fa fa-check-circle-o" style="padding-left: 40px;"></i><i class="fa fa-check-circle-o" style="padding-left: 40px;"></i><i class="fa fa-check-circle-o" style="padding-left: 40px;"></i><a style="padding-left: 20px;">2 selected items</a>
+              <i class="fa fa-plus-circle fa-2x" style="padding-left: 20px;"></i><i class="fa fa-folder-o fa-2x" style="padding-left: 30px;"></i><i class="fa fa-lock fa-2x" style="padding-left: 30px;"></i><i class="fa fa-trash-o fa-2x" style="padding-left: 30px;"></i><a style="padding-left: 20px;"><b>2 selected items</b></a>
 
           </div>
-          <div id="RightBar" class="righttAlign">
-              <button class="">Name</button> <button class="">Size</button> <button class="">Views</button> <button class="">Uploaded</button>
+          <div id="RightBar" class="pull-right righttAlign">
+              <button class="button">Name</button> <button class="button">Size</button> <button class="button">Views</button> <button class="buttonActive">Uploaded</button>
           </div>
+        </div>
 
+       </div>
+
+
+       <div class="imagesBox">
+         <div class="image-items" ng-repeat="item in items">
+           <img ng-src="{{item.thumbnail}}" title="{{item.fileName}}" width="100%;"/>
+           <p class="file">{{item.fileName}}</p>
+           <p class="uploaded">{{item.uploaded}}</p>
+         </div>
        </div>
 
 
