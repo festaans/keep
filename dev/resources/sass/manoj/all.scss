@@ -104,19 +104,22 @@ $overviewHeight: 118px;
   //background-color: $lightGrey;
   .overview {
     height: $overviewHeight;
-    //border: 2px solid red;
     padding-top: 20px;
     padding-left: 20px;
     padding-right: 20px;
+    border-bottom: 1px solid $lightGrey;
     .overview-heading {
       font-size: 24px;
-      margin-bottom: 25px;
+      margin-bottom: 20px;
     }
   }
   .images {
     //border: 2px solid green;
     background-color: #fff;
-    padding: 20px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
     display:flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -184,8 +187,5 @@ $overviewHeight: 118px;
           background-color: $lightGrey;
       }
     }
-  }
-  .side-panel {
-    display: none;
   }
 }
