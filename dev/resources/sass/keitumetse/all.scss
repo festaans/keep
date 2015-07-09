@@ -144,19 +144,56 @@ $topbarheight: "60px";
 
 
         /* iPads (portrait and landscape) ----------- */
-    @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+    @media only screen and (max-device-width : 1024px) {
      /* Styles */
+
+     /*.keitu{
+       .bottom{
+         .content-container{
+           display: inline-block;
+           background-color: #FFC0CB;
+         }
+       }
+     }
+     */
+
+     .keitu{
+       .bottom{
+         .content-container{
+           .items{
+             .item{
+               .filename{
+                 font-size : 2em;
+                 display : flex;
+                 direction : column;
+               }
+             }
+           }
+         }
+       }
+     }
     }
-
-
-     /* Desktops and laptops ----------- */
-    @media only screen  and (min-width : 1224px) {
-        /* Styles */
-      }
 
       /* iPhone 5 ----------- */
     @media only screen and (min-device-width: 320px) and (max-device-height: 568px) and (orientation : landscape) and (-webkit-device-pixel-ratio: 2){
         /* Styles */
+
+
+        .keitu{
+          .bottom{
+            .content-container{
+              .items{
+                .item{
+                  .filename{
+                    font-size : 2em;
+                    display : flex;
+                    direction : column;
+                  }
+                }
+              }
+            }
+          }
+        }
       }
 
 
@@ -169,11 +206,6 @@ $topbarheight: "60px";
       /* ----------- Non-Retina Screens ----------- */
      @media screen  and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) {
      }
-
-     /* ----------- Retina Screens ----------- */
-    @media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi) {
-    }
-
 
 
   } /*keitu*/
