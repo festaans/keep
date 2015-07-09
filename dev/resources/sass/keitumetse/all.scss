@@ -141,4 +141,71 @@ $topbarheight: "60px";
          }
        } /*content*/
     } /*bottom*/
+
+
+        /* iPads (portrait and landscape) ----------- */
+    @media only screen and (max-device-width : 1024px) {
+     /* Styles */
+
+     /*.keitu{
+       .bottom{
+         .content-container{
+           display: inline-block;
+           background-color: #FFC0CB;
+         }
+       }
+     }
+     */
+
+     .keitu{
+       .bottom{
+         .content-container{
+           .items{
+             .item{
+               .filename{
+                 font-size : 2em;
+                 display : flex;
+                 direction : column;
+               }
+             }
+           }
+         }
+       }
+     }
+    }
+
+      /* iPhone 5 ----------- */
+    @media only screen and (min-device-width: 320px) and (max-device-height: 568px) and (orientation : landscape) and (-webkit-device-pixel-ratio: 2){
+        /* Styles */
+
+
+        .keitu{
+          .bottom{
+            .content-container{
+              .items{
+                .item{
+                  .filename{
+                    font-size : 2em;
+                    display : flex;
+                    direction : column;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+
+      /* Samsung Galaxy S5 ----------- */
+    @media only screen and (min-device-width: 360px) and (max-device-height: 640px) and (orientation : landscape) and (-webkit-device-pixel-ratio: 3){
+        /* Styles */
+      }
+
+
+      /* ----------- Non-Retina Screens ----------- */
+     @media screen  and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) {
+     }
+
+
   } /*keitu*/
