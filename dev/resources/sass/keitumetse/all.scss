@@ -3,6 +3,7 @@ $midGray: #1e2327;
 $white: #FFFFFF;
 $gray: #778899;
 $blue: #20B2AA;
+$lightgray : #DCDCDC;
 //layout
 $topbarheight: "60px";
 //styles
@@ -121,7 +122,7 @@ $topbarheight: "60px";
           }
          .myLine {
            width: 100%;
-           border-bottom: 2px solid #DCDCDC;
+           border-bottom: 2px solid $lightgray;
          }
          .items {
            display : flex;
