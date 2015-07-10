@@ -95,6 +95,9 @@ $overviewHeight: 118px;
     padding-bottom: 10px;
     color: $textColor;
     font-size: 10px;
+    .progress-bar {
+      background-color: red;
+    }
   }
 }
 .content-panel {
@@ -149,6 +152,9 @@ $overviewHeight: 118px;
 }
 .right-margin {
   margin-right: 15px;
+}
+.plus{
+  margin-right: 25px;
 }
 .selected-items {
   display: inline-block;
