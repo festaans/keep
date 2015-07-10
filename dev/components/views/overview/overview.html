@@ -1,11 +1,10 @@
-<div class="view" style="background: #232B2D; height: 100%;">
-  <ul style="width:100%; padding: 0; margin: 0; border-bottom: 8px solid  #37B298; border-top: 8px solid #D95C5E;">
+<div class="view overview">
+  <ul>
     <li ng-repeat="item in items" style="width:6.66%; list-style: none; display: inline-block;"><img ng-src="{{item.thumbnail}}" title="{{item.fileName}}" width="100%;"/></li>
   </ul>
-  <ul style="margin: auto; padding: 100px; width:50%; text-align:center; list-style: none; font-size: 50px; line-height:150px; color: #E4E9EB;">
-    <li style="color: #1B2224; border-bottom: 2px solid #1B2224;">UI Chalenge - Keep</li>
-    <li style="border-bottom: 1px solid #6F7B7E;" ui-sref="keitumetse">Keitumetse</li>
-    <li style="border-bottom: 1px solid #6F7B7E;"><a ui-sref="manoj">Manoj</a></li>
-    <li style="border-bottom: 1px solid #6F7B7E;"><a ui-sref="yauvan">Yauvan</a></li>
+  <ul class="team">
+    <li style="background-image: url({{items[4].thumbnail}});"><a ui-sref="keitumetse">Keitumetse</a></li>
+    <li style="background-image: url({{items[7].thumbnail}});"><a ui-sref="manoj">Manoj</a></li>
+    <li style="background-image: url({{items[9].thumbnail}});"><a ui-sref="yauvan">Yauvan</a></li>
   </ul>
 </div>

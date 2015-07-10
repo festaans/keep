@@ -1,7 +1,17 @@
+@import "mixins/flexbox";
+
 @import "keitumetse/all";
 @import "manoj/all";
 @import "yauvan/all";
 
+@mixin rgbaBack($r,$g,$b,$a:1) {
+  background: rgba($r,$g,$b,$a);
+}
+
+$teamHeight: 300px;
+$teamPadding: 50px;
+$nameTagColor: rgba(0,133,133,0.5);
+$teamtextfontsize: 15px;
 html, body, .view-container {
   font-family: sans-serif;
    width: 100%;
@@ -9,3 +19,75 @@ html, body, .view-container {
    padding: 0 0 0 0;
    margin: 0 0 0 0;
  }
+
+.view {
+  &.overview {
+    ul {
+      margin: 0px;
+      padding: 0px;
+      list-style: none;
+      &.team {
+         @include flexbox;
+         @include flex-direction(row);
+         @include align-items(center);
+         li {
+           @include flex(1);
+           margin: 30px;
+           height: $teamHeight;
+           text-align: center;
+           border: 1px solid #333;
+           position: relative;
+           cursor: pointer;
+           background-position: center center;
+           background-size: cover;
+           background-repeat: no-repeat;
+           a {
+             position: absolute;
+             bottom: 0;
+             left: 0;
+             right: 0;
+             height: ($teamHeight / 5);
+             line-height: ($teamHeight / 5);
+             //@include rgbaBack(0,133,133);
+             background: #333;
+             color: #fff; //contrast-color($nameTagColor);
+             text-decoration: none;
+             transition: all 0.5s ease-in-out;
+             font-size: $teamtextfontsize;
+           }
+         }
+         li:hover {
+           a {
+             @include rgbaBack(0,133,133,0.5);
+             height: ($teamHeight);
+             transition: all 0.5s ease-in-out;
+             line-height: ($teamHeight);
+             font-size: ($teamtextfontsize * 2);
+           }
+         }
+         /*
+         li::after {
+           content: "";
+           background: transparent;
+           transition: all 0.5s ease-in-out;
+           position: absolute;
+           top: 0;
+           left: 0;
+           right: 0;
+           bottom: 0;
+         }
+         li:hover::after {
+           content: "";
+           transition: all 0.5s ease-in-out;
+           position: absolute;
+           background: #000;
+           top: 0;
+           left: 0;
+           right: 0;
+           bottom: 0;
+         }
+         */
+      }
+    }
+  }
+}
