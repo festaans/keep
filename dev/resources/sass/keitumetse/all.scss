@@ -37,11 +37,11 @@ $topbarheight: "60px";
 
 
         span.search {
-          position: relative;
+          position: absolute;
           input{
             @include border-radius(15px);
-            min-width: 100px;
-            height: 20px;
+          //  min-width: 100px;
+          //  height: 20px;
             padding: 5px 35px 5px 12px;
           //  border-radius: 15px;
             -webkit-appearance: none;
@@ -261,3 +261,7 @@ $topbarheight: "60px";
 
 
   } /*keitu*/
+
+  .search1 {
+    margin-right: 20px;
+  }
