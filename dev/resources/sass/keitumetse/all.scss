@@ -6,6 +6,11 @@ $blue: #20B2AA;
 $lightgray : #DCDCDC;
 //layout
 $topbarheight: "60px";
+
+//mixin
+@mixin border-radius($radius){
+  border-radius : $radius;
+}
 //styles
 .keitu {
   width:100%;
@@ -28,6 +33,46 @@ $topbarheight: "60px";
         padding: 20px;
         height: 17px;
         text-transform: uppercase;
+
+
+
+        span.search {
+          position: relative;
+          input{
+            @include border-radius(15px);
+            min-width: 100px;
+            height: 20px;
+            padding: 5px 35px 5px 12px;
+          //  border-radius: 15px;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            border: none;
+            -webkit-transition: all 0.3s ease-in-out;
+            -moz-transition: all 0.3s ease-in-out;
+            -o-transition: all 0.3s ease-in-out;
+            transition: all 0.3s ease-in-out;
+            &:focus {
+              min-width: 300px;
+            }
+          }
+          button {
+            width: 30px;
+            height: 30px;
+            position: absolute;
+            right: 5px;
+            border: none;
+            background: transparent;
+            i {
+              color: #999;
+              font-size: 15px;
+              line-height: 20px;
+            }
+          }
+          :focus {
+              outline-color: transparent;
+              outline-style: none;
+          }
+        }
 
       }
 
@@ -142,12 +187,12 @@ $topbarheight: "60px";
          }
        } /*content*/
     } /*bottom*/
-/*
+
     @mixin display-type($display){
       display : $display;
     }
 
-*/
+
         /* iPads (portrait and landscape) ----------- */
     @media only screen and (max-device-width : 1024px) {
      /* Styles */
@@ -168,10 +213,10 @@ $topbarheight: "60px";
            .items{
              .item{
                .filename{
-            /*    // @include display-type(flex); */
+               @include display-type(flex);
 
                  font-size : 2em;
-                 display : flex;
+                // display : flex;
                  direction : row;
                }
              }
