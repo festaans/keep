@@ -20,4 +20,12 @@ Your score will be the total of the following:
 
 ---
 
-#### Round ?
+#### Round 2
+As a team create a fully functional, fully tested, responsive, pixel perfect version of Keep. This version of Keep should store items using local storage.
+
+You will be scored using the following criteria:
+- Your use of git flow
+- Project structure (Seperation of concerns into separate files)
+- Extend you tested your code
+
+Reference: http://www.sitepoint.com/unit-and-e2e-testing-in-angularjs/
