@@ -26,6 +26,6 @@ As a team create a fully functional, fully tested, responsive, pixel perfect ver
 You will be scored using the following criteria:
 - Your use of git flow
 - Project structure (Seperation of concerns into separate files)
-- Extend you tested your code
+- The extend to which you tested your code
 
 Reference: http://www.sitepoint.com/unit-and-e2e-testing-in-angularjs/
