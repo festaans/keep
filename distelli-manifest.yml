@@ -1,1 +1,2 @@
-BuildWith: Travis
+festaans/keep:
+  BuildWith: Travis
